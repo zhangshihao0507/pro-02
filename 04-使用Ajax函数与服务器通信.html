@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>04-使用Ajax函数与服务器通信</title>
+</head>
+
+<body>
+  <button id="btnGET">使用Ajax函数发起GET请求</button>
+  <button id="btnPOST">使用Ajax函数发起POST请求</button>
+  <script src="./jquery.js"></script>
+  <script>
+    $(function () {
+      $('#btnGET').on('click', function () {
+        $.ajax(
+          {
+            type: 'GET',
+            url: 'http://www.liulongbin.top:3006/api/getbooks',
+            data: {},
+            success: function (res) {
+              console.log(res);
+            }
+          }
+        )
+      })
+      $('#btnPOST').on('click', function () {
+        $.ajax(
+          {
+            type: 'POST',
+            url: 'http://www.liulongbin.top:3006/api/addbook',
+            data: {
+              bookname: '钢铁是怎样炼成的',
+              author: '张某人',
+              publisher: '沙县出版社'
+            },
+            success: function (res) {
+              console.log(res);
+            }
+          }
+        )
+      })
+    })
+  </script>
+</body>
+
+</html>

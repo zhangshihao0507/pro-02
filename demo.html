@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>demo</title>
+</head>
+<body>
+  <div>111</div>
+  <div>222</div>
+  <div>131</div>
+  <div>151</div>
+  <div>181</div>
+  <script src="./jquery.js"></script>
+  <script>
+    let arr=[12,34,567,7834,435,56];
+    $(function()
+    {
+      $.each($('div'),function()
+      {
+        console.log($(this).html());
+      })
+    })
+  </script>
+</body>
+</html>

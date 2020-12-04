@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>03-使用POST向服务器提交数据</title>
+</head>
+
+<body>
+  <button id="btn">使用POST向服务器提交数据</button>
+  <script src="./jquery.js"></script>
+  <script>
+    $(function () {
+      $.post('http://www.liulongbin.top:3006/api/addbook',
+        {
+          author: '王某人',
+          bookname: '母猪的产后护理',
+          publisher: '陕西出版社'
+        }, function (res) {
+        console.log(res);
+      })
+    })
+  </script>
+</body>
+
+</html>

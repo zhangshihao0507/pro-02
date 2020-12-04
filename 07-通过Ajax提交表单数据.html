@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>07-通过Ajax提交表单数据</title>
+</head>
+<body>
+  <form id="f1" action="/login" method="POST">
+    <input type="text" name="username">
+    <input type="password" name="password">
+    <button type="submit">提交</button>
+  </form>
+  <script src="./jquery.js"></script>
+  <script>
+    $('#f1').on('submit',function(e)
+    {
+      // alert('监听到了表单的提交事件');
+      e.preventDefault();//阻止表单的默认提交和跳转行为
+      console.log($(this).serialize());//serialize函数可以一次性获取所有的表单数据
+      //注意：在使用serialize函数快速获取表单数据的时候一定要给每个表单元素指定name属性
+    })
+  </script>
+</body>
+</html>
